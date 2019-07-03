@@ -16,8 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
+from accounts.views import register, login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'^register/$', register),
+    url(r'^login/$', login_view),
+    url(r'^logout/$', logout_view),
     url(r'^', include('data.urls'))
 ]

@@ -3,7 +3,7 @@ import time
 import random
 
 def getUrl(index):
-    url = 'http://turnincode.cafe24.com:8880/home/omok/'+str(index)+'/'
+    url = 'http://turnincode.cafe24.com:8003/home/omok/'+str(index)+'/'
     res = requests.get(url)
     if res.status_code == 404:
         time.sleep(5)
@@ -22,7 +22,7 @@ while True:
 #    y = input("y: ")
 
     data =  {'client': 'white','x': x, 'y': y}
-    res = requests.post('http://turnincode.cafe24.com:8880/home/omok/', data = data)
+    res = requests.post('http://turnincode.cafe24.com:8003/home/omok/', data = data)
 
     getUrl(index)
     index += 2;

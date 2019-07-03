@@ -2,8 +2,6 @@ from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
-
-# Create your views here.
 from rest_framework import status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
@@ -14,6 +12,7 @@ from rest_framework import viewsets
 from data.models import Stones
 from .serializers import OmokSerializer
 from django.shortcuts import redirect, render
+
 
 class Session1View(TemplateView):
     def get(self, request, **kwargs):
@@ -44,6 +43,5 @@ def CalcTest(x1):
 class OmokViewSet(viewsets.ModelViewSet):
         queryset = Stones.objects.all()
         serializer_class = OmokSerializer
-
 
 
